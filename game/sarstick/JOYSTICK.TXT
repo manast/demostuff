@@ -1,0 +1,52 @@
+
+                Joystick interface by Sarwaz / Mistery
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Quick explanation:
+
+ This is just a unit that handle the joystick stuff in a fancy way.
+ You dont need to center anything or something like that. Just use the
+ procedures provided and you dont have to worth about anything else.
+
+ The limitation is that you wont get the simulator joystick features, and
+ it is because this unit is just for using in arcade games or other games
+ where doesnt matter how fast you move the stick, it always responds the 
+ same speed.
+
+ I coded this just for my needs. But i thought that maybe someone could find
+ it usefull too, so here it is. I give it as Freeware. So use it as you want
+ but remeber to give me some greets/credits.
+
+
+ The interface is quite simple. Just three procedures:
+
+ - CheckJoystick
+        In: Nothing
+        Out: CL with info about joysticks detected.
+             Bit 0 - Joy A detected 
+             Bit 1 - Joy B detected
+             1 means detected
+
+ - CheckButtons
+        In: AL - 1 = joy A. 2 = joy B
+            AH - 1 = button A, 2 = button B, 3= button C, etc
+        Out: Carry set if button pressed
+
+ - CheckStick
+        In: Nothing
+        Out: CL
+               Joy B | Joy A
+        CL = |7|6|5|4|3|2|1|0|
+              U D L R|U D L R
+
+        U = UP, D = Down, L = Left, R = Right        
+        Bits = 1 means pressed
+
+
+   Thats all. For contact try this:
+
+   
+   email: sarwaz@freenet.hut.fi
+
+
+   Sarwaz / Mistery

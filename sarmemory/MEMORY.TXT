@@ -1,0 +1,63 @@
+
+
+
+                        Memory Unit for DOS 32 v1.0
+                        ---------------------------
+                            by Sarwaz / Mistery
+
+  Introduction:
+
+  If you have coded programs for dos 32 (by Adam Seychell), you probably
+  have found some problems with the memory allocation functions. They are
+  very limited. Only allow 64 allocations and you must free the blocks in
+  a stack order. So everyone who wants to code any serious program for
+  dos 32 will need to code new memory funtions. I did so. I just coded
+  this tiny memory unit. Very easy to use and it will fit in everybody
+  needs.
+
+  Btw, this software is of coz freeware (what else?!). So use it as much
+  as you want (that will make me happy).
+
+
+  How to use it:
+
+  There are just two functions, Allocmem and Freemem.
+
+  - Allocmem
+        In: edx -> amount of memory to alloc in bytes
+        Out: Carry clear and edx with pointer to memory block
+             Carry set if error (not enough memory)
+
+  - Freemem
+        In: edx -> pointer to block
+        Error: carry set (edx wasnt a memory block)
+
+
+   Well, as easy as that. Then just link your program with memory.obj
+   (with dlink of coz)
+
+
+    And remember to greet me!
+
+
+   Bugs:
+
+   No bugs!
+
+
+   Contact:
+
+   e-mail:
+        Sarwaz@Freenet.hut.fi
+
+
+
+
+   Sarwaz / Mistery
+
+
+  
+
+
+        
+        

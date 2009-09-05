@@ -1,0 +1,75 @@
+// Documentation on 12-, 9- and 7-muls rotation formulas
+
+/*
+  y'  = cx*y   + sx*z      12 muls version
+  z'  = cx*z   - sx*y
+
+  x'  = cy*x   + sy*z'
+  z'' = cy*z'  - sy*x
+
+  x'' = cz*x'  + sz*y'
+  y'' = cz*y'  - sz*x'
+
+-----------------------
+
+  x'' = cz*(cy*x   + sy*(cx*z   - sx*y))  + sz*(cx*y   + sx*z)
+  y'' = cz*(cx*y   + sx*z)  - sz*(cy*x   + sy*(cx*z   - sx*y))
+  z'' = cy*(cx*z   - sx*y)  - sy*x
+
+------------------------
+
+  x'' = cy*cz*x   + cx*sy*cz*z   - sx*sy*cz*y  + cx*sz*y   + sx*sz*z
+  y'' = cx*cz*y + sx*cz*z - cy*sz*x   - cx*sy*sz*z   + sx*sy*sz*y
+  z'' = cx*cy*z   - sx*cy*y  - sy*x
+
+------------------------
+
+  x'' = (cy*cz)*x   + (cx*sz - sx*sy*cz)*y  + (cx*sy*cz + sx*sz)*z
+  y'' = (-cy*sz)*x + (cx*cz + sx*sy*sz)*y + (sx*cz - cx*sy*sz)*z
+  z'' = (-sy)*x + (-sx*cy)*y + cx*cy*z
+
+------------------------
+
+  k0 = cy*cz                    9 muls version
+  k1 = cx*sz - sx*sy*cz
+  k2 = cx*sy*cz + sx*sz
+  k3 = -cy*sz
+  k4 = cx*cz + sx*sy*sz
+  k5 = sx*cz - cx*sy*sz
+  k6 = -sy
+  k7 = -sx*cy
+  k8 = cx*cy
+
+  x'' = k0*x + k1*y + k2*z
+  y'' = k3*x + k4*y + k5*z
+  z'' = k6*x + k7*y + k8*z
+
+------------------------
+
+  sxsz = sx*sz                          9 muls, rewritten a little
+  sxcz = sx*cz
+  cxsz = cx*sz
+  cxcz = cx*cz
+
+  k0 = cy*cz
+  k1 = cxsz - sy*sxcz
+  k2 = sy*cxcz + sxsz
+  k3 = -cy*sz
+  k4 = cxcz + sy*sxsz
+  k5 = sxcz - sy*cxsz
+  k6 = -sy
+  k7 = -sx*cy
+  k8 = cx*cy
+
+------------------------
+
+  k9 = k0*k1                            7 muls (used with the above 9 k's)
+  k10 = k3*k4
+  k11 = k6*k7
+
+  xy = x*y
+  x'' = (k0+y)*(k1+x) - k9 - xy + k2*z
+  y'' = (k3+y)*(k4+x) - k10 - xy + k5*z
+  z'' = (k6+y)*(k7+x) - k11 - xy + k8*z
+
+*/

@@ -1,0 +1,40 @@
+Game Ideas
+~~~~~~~~~~
+
+- Game Purpose:
+  The objetive of the game is to pick all the desired objects of the screen.
+  The Character is a guy who cant stop jumping, and each time he jumps the
+  ground disapear, so the more time you use to pick the objects, the more 
+  dificult because there is less and less ground.
+  Simple he? 
+
+- Enemies.
+  There will be a lot of enemies, flying enemies, non flying enemies, etc,etc
+
+- Objects.
+  In each screen you have to take a number of objects, f.e. , it could be
+  coconuts, and you have to pick all the coconuts of the screen to pass.
+  There will be other objects, like lifes, speed up, jump up, etc,etc.
+
+- Tech info.
+  The idea is a plattform-arcade game. it has to be very fast and very 
+  adictive, is there where we have to work hard.
+  I have planned to make the game in 320x240c256, i think is a nice resolution,
+  and we can have hardware scrolly. I have already coded a lot of the sprite
+  engine, but i have to recode all the stuff to pmode, because i think that
+  the game should be coded in EOS (eclipse extenter), which is very nice, and 
+  it includes SB/GUS MOD rutines, KEYBOARD stuff, etc ,etc that will be very 
+  usefull for us.
+
+- A example of a game screen.
+  We could have a 320x600 background and then scroll up and down there.
+  First i though it would be nice some score window or something, but at the
+  end I decided to show the score info directly over the background, without 
+  windows, so you will have a bigger play window.
+
+And i think thats all. 
+
+/Sarwaz
+
+P.D. I need IDEAS!
+

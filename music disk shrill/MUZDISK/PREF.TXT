@@ -1,0 +1,42 @@
+Old tunes musicdisk. Preferences!
+
+Check out the JPG picture first.
+
+
+Screen res: 640x480
+Colors: 256
+
+Logos on the top. Will be drawn by either Sunday or Zapman.
+
+2 different fonts?
+
+Scrolltext on the bottom.
+
+Menu font size. Same font size but different style?
+
+Buttons on the right:
+
+* Next Tune
+* Previous Tune
+* Fast Forward
+* Rewind
+
+About the menu:
+
+When you select a tune info will appear in the same blue box
+where the menu is. Once you press ESC you will get back to
+the menu.
+
+Should the blue box be scrollable incase we write more
+than one page of text for each tune (and other info)?
+
+You don't have to do mouse-support! :)
+
+If you're in the main menu, pressing ESC will quit the musicdisk.
+
+Something more?
+
+
+l8r
+
+

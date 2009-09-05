@@ -1,0 +1,81 @@
+
+                            Welcome to
+                       Sarwaz Sprites Engine (tm) v1.0
+                                by
+                         Sarwaz Of Mistery
+
+1 - Introduction.
+
+This stuff you have now in your hands is a complete Sprite engine (Fast) which
+works under both plain mode 13h and some mode-x.
+I coded this system for my own use, but i thought that it was cool to release
+this stuff to help everyone coding a videogame.
+First of all i have to tell you that this software is Freeware. So you can use
+it as long as you wish in the manner you want but always with the code unchan-
+ged and for use in non-comercial stuff. Of course i accept registrations, 
+if you register you will get the full sources, the version 2.0 for Protected 
+mode and the licence for using this software in comercial stuff. 
+Fill the registration form SPRITES.FRM and send it to me. You can try via 
+e-mail (recomended) or snail-mail. The adresses are at the end of the doc. 
+
+About this stuff i have to tell you that im quite happy with it. Right now it 
+support the following features:
+
+þ From 0 to 255 sprites simultaneous on the screen.
+þ 256x256 Max. Sprite size.
+þ Totally Transparent sprite managing for the user.
+þ Sprite colision detection.
+þ Full interactivity with SBE (Sarwaz Bobs Engine)
+
+2 - How to use it.
+
+Well, the engine is very easy to use. There are a few functions that you need
+to call for manage the sprites, they are:
+
+        - Init_Sprite
+        - Put_Sprite
+        - Move_Sprite
+        - Test_Sprite_Colision
+        - End_Sprite
+
+2.1) Init_Sprite
+      Used to Create a sprite. 
+      Inputs: Si - Sprite Number (From 0 to 255)
+              Ah,Al - Sprite Weigth and Heigth respectively
+              ds:si - Pointer to the Sprite Data in SSE format (Explained later)
+
+2.2) Put_sprite
+      Used to print the first time a sprite on the screen. Be carefull, and dont
+      call this function if the sprite is already on the screen.
+      Inputs: Si - Sprite Number
+              Ax,Bx - Sprite New Coords
+              
+2.3) Move_Sprite
+      Used to move a Sprite on the screen.
+      Inputs: Si - Sprite Number
+              Cl - Kind of movement. 1=left, 2=right, 3=up, 4=down
+              Ch - Speed of the movement. From 1 to 255 (Recomended 1 to 8)
+
+2.4) Test_Sprite_Colision
+      Used to test if two sprites have colided.
+      Inputs: Si,Di - The sprites to test
+      Outputs: Carry Flag set to 1 if colision detected
+
+
+3 - Contact Information.
+
+    e-mail: 
+        crash@mail.s-gimvic.lj.edus.si
+
+    Snail Mail
+        Manuel Astudillo
+        Calle buganvillas - Casa Calma
+        San Pedro Alcantara - MALAGA
+        SPAIN - EUROPE
+
+    Voice:
+        International Number:	34-5-2780827
+        National Number: (95) - 2780827
+
+
+/Sarwaz

@@ -1,0 +1,61 @@
+ MAPv01 File Specification:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note: MAP format is donated to the Public Domain by Manuel Astudillo.
+      Created by Manuel Astudillo in February 1997.
+     
+
+ - Header: 
+
+   First 8 Bytes are the file signature: 'SAR MAP',EOF
+
+   offset       length (Bytes)          Description
+     8            4                   Gfx Data Length
+     12           4                   Tile Data Length
+     16           2                   Tile Array Length  (Explained later)
+     18           2                   Map X Length (in tiles)
+     20           2                   Map Y Length (in tiles)
+     22           1                   File Version
+     23           1                   Compresion mode (0= no compresion)
+     24           4                   Reserved
+     28           1                   Tile X Length
+     29           1                   Tile Y Length
+
+- Palette:
+   offset     length (Bytes)
+     30         768 
+
+- Tile Array:
+
+   Begins at offset 798 and is "Tile Array length" double words.
+   Its a double word array of offsets. Every position in the array is the
+   tile number, and the offset is where in the GFX Block is that tile GFX.
+
+- Tile atributes:
+    
+   Its a table of "Tile Array length" bytes.
+   Every byte represents the attribute of each tile.
+   Sar edit uses this table:
+        0 = Background
+        1 = Solid
+        2 = Magic  (this can be used for secrets objects etc)
+        . = Magic
+        . = Magic
+        . = Magic
+        etc
+
+- Gfx Data:
+   
+   Its the Graphics block. If it is compressed you have to decompress it
+   before you can use it.
+
+- Tile Data:
+   
+   Its the MAP itself. At every position of each tile you a word (0-65535)
+   representing the tile number. You can get the Tile gfx just looking at
+   the Tile array table, and use that offset to copy from the GFX data.
+
+
+
+ 
+
